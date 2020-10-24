@@ -1,0 +1,54 @@
+<%- include("../partials/header") %>
+<style rel="stylesheet/css">
+	body{
+    		background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQez0l0DqHuw7RuqZ86_ep7xckEVlcK-gVTqA&usqp=CAU)center center /*/ cover repeat */;
+    	}
+</style>
+
+
+<div class="container border border-primary bg-warning my-5">
+	<div class="border border-secondary p-5 m-5"style="background:lightpink;">
+<h1 class="display-1 text-dark text-center font-weight-bold m-3"> <%=character.name%> </h1>
+<div class="text-center p-3 mt-3">
+<img class="border border-dark w-50 h-25" src="<%=character.image%>" >
+</div>
+<p > <%=character.description%> </p>
+		                 <div class="btn-group" role="group">
+                        <a class="btn btn-xs btn-primary mr-2 mb-3" href="/characters/<%= character._id %>/edit">Edit</a>
+                        <form id="btn btn-inline " action="/characters/<%= character._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-xs btn-danger">Delete</button>
+                        </form>
+		                </div>
+		
+		<div >
+                <div class="text-right">
+                    <a class="btn btn-success" href="/characters/<%= character._id %>/comments/new">Add New Comment</a>
+                </div>
+                <hr>
+                <% character.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= comment.author.username %></strong>
+                            <span class="float-right">10 days ago</span>
+                            <br>
+                                <%= comment.text %> <br>
+								
+								<div class="btn-group" role="group">
+                            <a class="btn btn-sm btn-primary text-light mb-3 mr-2 " 
+                               href="/characters/<%=character._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                            <form  action="/characters/<%=character._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                <input type="submit" class="btn btn-sm btn-danger" value="Delete">
+                            </form>
+						</div>
+					
+								<hr>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+		<div class="text-center mt-4">
+	<a href="/characters" class="btn btn-danger btn-lg">Back to Characters Page</a>
+		</div>
+		
+</div>
+</div>

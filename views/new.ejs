@@ -1,0 +1,30 @@
+<%- include("../partials/header") %>
+<style rel="stylesheet/css">
+	body{
+    		background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQez0l0DqHuw7RuqZ86_ep7xckEVlcK-gVTqA&usqp=CAU)center center /*/ cover repeat */;
+    	}
+</style>
+
+
+<div class=" w-50 h-50 mx-auto mt-5 p-5 bg-warning border border-secondary">
+<h1 class=' display-1 text-center'> Add a new Character </h1>
+<div  style= "width:30%; margin:0 auto;">
+<form action='/characters' method='POST'>
+	<div class="form-group">
+	<input class="form-control" type="text" placeholder="Enter name" name="name">
+	</div>
+	<div class="form-group">
+    <input class="form-control" type="text"  placeholder="Enter Url" name="image">
+	</div>
+	<div class="form-group">
+    <input class="form-control" type="text"  placeholder="Enter descriptiton" name="descriptiton">
+	</div>
+	<div class="form-group">
+    <button class="form-control btn-info btn-xl btn-block ">Submit </button>
+	</div>
+	
+</form>
+	<br>
+	<a class="btn btn-md btn-danger text-light mx-auto w-100 " href="/characters">Go to the Characters page</a>
+</div>
+</div>

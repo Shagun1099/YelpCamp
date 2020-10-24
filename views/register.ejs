@@ -1,0 +1,24 @@
+<%- include("../partials/header") %>
+<style rel="stylesheet/css">
+	body{
+    		background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQez0l0DqHuw7RuqZ86_ep7xckEVlcK-gVTqA&usqp=CAU)center center /*/ cover repeat */;
+    	}
+</style>
+
+
+<div class=" w-50 h-50 mx-auto mt-5 p-5 bg-warning border border-secondary">
+<h1 class=' display-1 text-center'> Sign Up!</h1>
+<div  style= "width:30%; margin:0 auto;">
+<form action='/register' method='POST'>
+	<div class="form-group">
+	<input class="form-control" type="text" placeholder="Enter username" name="username">
+	</div>
+	<div class="form-group">
+    <input class="form-control" type="text"  placeholder="Enter password" name="password">
+	</div>
+	<div class="form-group">
+    <button class="form-control btn-info btn-xl btn-block ">Sign Up </button>
+	</div>
+</form>
+</div>
+</div>

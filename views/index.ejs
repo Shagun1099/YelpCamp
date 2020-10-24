@@ -1,0 +1,31 @@
+
+
+<%- include("../partials/header") %>
+<style rel="stylesheet/css">
+	body{
+    		background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQez0l0DqHuw7RuqZ86_ep7xckEVlcK-gVTqA&usqp=CAU)center center /*/ cover repeat */;
+    	}
+</style>
+
+<div class=" p-4 border border-secondary mx-auto mt-5 w-75 bg-warning">
+	<!-- <header class="jumbotron border border-dark bg-warning" > -->
+	<h1 class="display-1 text-center  w-100"> This is The Characters PaGE!!!!! </h1>
+	<p class="text-dark ml-5">These all are my favourite characters..especially Scott mcCall :) </p>
+	<a class="text-primary btn btn-lg btn-danger text-light ml-5 mb-5" href="/characters/new">Add a new Character</a>
+<!-- </header> -->
+
+<div class="row text-center" style="display:flex; flex-wrap:wrap;" >
+<% characters.forEach(function(character){ %>
+    <div class="col-md-3 col-sm-6">
+		<div class="card border border-dark rounded my-2">
+		<img src="<%= character.image %>">
+			<div class="container bg-info ">
+			      <p class=" text-center text-light mt-2 " style="font-size:30px;" > <%= character.name %> 
+				  <a href="/characters/<%=character._id %> " class="btn btn-danger btn-sm float-right mt-3 ">More Info!!</a>
+				</p>
+			</div>
+		</div>
+	</div>
+<% }); %>
+	</div>
+</div>
